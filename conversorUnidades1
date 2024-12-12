@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+// Função para exibir o menu inicial
+void exibirMenu() {
+    printf("Escolha a unidade inicial:\n");
+    printf("1. Metro (m)\n");
+    printf("2. Centímetro (cm)\n");
+    printf("3. Milímetro (mm)\n");
+    printf("Digite a opção desejada: ");
+}
+int main() {
