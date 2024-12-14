@@ -28,3 +28,30 @@ void comprimento(){
     }
 
 }
+int main(){
+       float valor, resultado;
+                int direcao;
+
+                printf("Converter:\n");
+                printf("1 - Metros quadrados para centimetros quadrados\n");
+                printf("2 - Centimetros quadrados para metros quadrados\n");
+                printf("Escolha a direcao da conversao (1 ou 2): ");
+                scanf("%d", &direcao);
+                fflush(stdin);
+
+                if (direcao == 1) {
+                    printf("Digite o valor em metros quadrados: ");
+                    scanf("%f", &valor);
+                    fflush(stdin);
+                    resultado = valor * 10000;
+                    printf("%.2f metros quadrados equivalem a %.2f centimetros quadrados.\n", valor, resultado);
+                } else if (direcao == 2) {
+                    printf("Digite o valor em centimetros quadrados: ");
+                    scanf("%f", &valor);
+                    fflush(stdin);
+                    resultado = valor / 10000;
+                    printf("%.2f centimetros quadrados equivalem a %.2f metros quadrados.\n", valor, resultado);
+                } else {
+                    printf("Direcao de conversao invalida.\n");
+                }
+}
