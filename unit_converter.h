@@ -43,5 +43,5 @@ void conv_comprimento(){
             printf("Opcao invalida. \n");
             break;
         }
-    }
+    } // Teste
 }
