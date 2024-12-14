@@ -14,6 +14,7 @@
  ***********************************************/
 
 #include <stdio.h>
+#include "unit_converter.h"
 //#include <BIBLIOTECA_DE_FUNCOES.h>
 
 //Início do main
@@ -49,7 +50,7 @@ int main () {
             //1 - Unidades de comprimento(metro, centímetro, milimetro)
             case 1:{
                 //FUNÇÃO DE CONVERSÃO DE COMPRIMENTO
-
+                conv_comprimento();
                 break;
             }//fim case 1
 
