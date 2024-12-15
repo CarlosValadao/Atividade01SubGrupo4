@@ -8,4 +8,65 @@ void exibirMenu() {
     printf("3. Milímetro (mm)\n");
     printf("Digite a opção desejada: ");
 }
+// Função principal
 int main() {
+    int opcaoInicial, opcaoDestino;
+    float valor, resultado;
+
+    // Exibe o menu e lê a unidade inicial
+    exibirMenu();
+    scanf("%d", &opcaoInicial);
+
+    // Valida a opção inicial
+    if (opcaoInicial < 1 || opcaoInicial > 3) {
+        printf("Opção inválida!\n");
+        return 1;
+    }
+
+    // Solicita o valor a ser convertido
+    printf("Digite o valor a ser convertido: ");
+    scanf("%f", &valor);
+
+    // Exibe o menu novamente para a unidade de destino
+    printf("Escolha a unidade de destino:\n");
+    printf("1. Metro (m)\n");
+    printf("2. Centímetro (cm)\n");
+    printf("3. Milímetro (mm)\n");
+    printf("Digite a opção desejada: ");
+    scanf("%d", &opcaoDestino);
+
+    // Valida a opção de destino
+    if (opcaoDestino < 1 || opcaoDestino > 3) {
+        printf("Opção inválida!\n");
+        return 1;
+    }
+
+    // Processa a conversão com base nas opções escolhidas
+    if (opcaoInicial == opcaoDestino) {
+        resultado = valor; // Mesma unidade, sem conversão
+    } else if (opcaoInicial == 1) { // Metro para outras unidades
+        if (opcaoDestino == 2) {
+            resultado = valor * 100; // Metro para centímetro
+        } else {
+            resultado = valor * 1000; // Metro para milímetro
+        }
+    } else if (opcaoInicial == 2) { // Centímetro para outras unidades
+        if (opcaoDestino == 1) {
+            resultado = valor / 100; // Centímetro para metro
+        } else {
+            resultado = valor * 10; // Centímetro para milímetro
+        }
+    } else if (opcaoInicial == 3) { // Milímetro para outras unidades
+        if (opcaoDestino == 1) {
+            resultado = valor / 1000; // Milímetro para metro
+        } else {
+            resultado = valor / 10; // Milímetro para centímetro
+        }
+    }
+
+    // Exibe o resultado
+    printf("Resultado da conversão: %.2f\n", resultado);
+
+    return 0;
+}
+
