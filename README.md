@@ -36,10 +36,13 @@ O programa oferece as seguintes funcionalidades de conversão:
 
 ## Histórico de Revisões
 - **12/12/2024** - *Victor Samir*: Criou o código principal com o menu de opções de conversão.
+- **13/12/2024** - *Elaine Garrido*: Criou o código Conversor de Unidades de comprimento.
+- **14/12/2024** - *Elaine Garrido*: Alterou o Conversor de unidades de comprimento para V2.
 - (Adicione novas revisões conforme necessário)
 
 ## Contribuidores
 - **Victor Samir Ribeiro dos Anjos**
+- **Elaine Pereira Garrido**
 - (Adicione outros contribuintes)
 
 ## Líder do Projeto
