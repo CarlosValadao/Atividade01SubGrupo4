@@ -13,9 +13,27 @@
 * Líder do projeto: [ADICIONAR NOME]
  ***********************************************/
 
+#define TONELADA   1
+#define QUILOGRAMA 2
+#define GRAMA      3
+
+
 #include <string.h>
 
 /********************************************** CONVERSOR DE UNIDADES DE COMPRIMENTO ***********************************************/
+
+
+char exibirMenuConversaoMassa()
+{
+    int unidadeInicial = 0;
+    printf("Escolha a unidade que deseja converter:\n");
+    printf("1. Toneladas (T)\n");
+    printf("2. Quilogramas (KG)\n");
+    printf("3. Gramas (g)\n");
+    printf("Digite a opcao desejada: ");
+    scanf("%c", &unidadeInicial);
+    return unidadeInicial;
+}
 
 int exibirMenu() {
     int unidadeInicial = 0;
@@ -149,9 +167,48 @@ void conv_comprimento(){
 
 /********************************************** CONVERSOR DE UNIDADES DE MASSA ***********************************************/
 
+float ton2grams(float ton) { return ton*1000000; };
+
+float ton2kilograms(float ton) { return ton*1000; };
+
+float kilograms2ton(float kilograms) { return kilograms/1000; };
+
+float kilograms2grams(float kilograms) { return kilograms*1000; };
+
+float grams2ton(float grams) { return grams/1000000; };
+
+float grams2kilograms(float grams) { return grams/1000; };
+
 //Conversor de unidades de massa
 void conv_massa(){
+    char unidadeInicial = 0;
+    float massToConvert, convertedMass1, convertedMass2;
 
+    unidadeInicial = exibirMenuConversaoMassa();
+    printf("Digite o valor a ser convertido: \n");
+    scanf("%f", &massToConvert);
+
+    switch (unidadeInicial)
+    {
+    case TONELADA:
+        convertedMass1 = ton2grams(massToConvert);
+        convertedMass2 = ton2kilograms(massToConvert);
+        printf("%.2fT equivale a %.2fg e %.2fKG\n", massToConvert, convertedMass1, convertedMass2);
+        break;
+    case QUILOGRAMA:
+        convertedMass1 = kilograms2grams(massToConvert);
+        convertedMass2 = kilograms2ton(massToConvert);
+        printf("%.2fKG equivale a %.2fg e %.2fT\n", massToConvert, convertedMass1, convertedMass2);
+        break;
+    case GRAMA:
+        convertedMass1 = grams2kilograms(massToConvert);
+        convertedMass2 = grams2ton(massToConvert);
+        printf("%.2fg equivale a %.2fKG e %.2fT\n", massToConvert, convertedMass1, convertedMass2);
+        break;
+    default:
+        printf("Escolha errada\n");
+        break;
+    }
 }
 
 /********************************************** CONVERSOR DE UNIDADES DE VOLUME ***********************************************/
