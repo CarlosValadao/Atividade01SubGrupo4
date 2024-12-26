@@ -22,6 +22,7 @@
 
 /********************************************** CONVERSOR DE UNIDADES DE COMPRIMENTO ***********************************************/
 
+
 char exibirMenuConversaoMassa()
 {
     int unidadeInicial = 0;
@@ -33,7 +34,6 @@ char exibirMenuConversaoMassa()
     scanf("%c", &unidadeInicial);
     return unidadeInicial;
 }
-
 
 int exibirMenu() {
     int unidadeInicial = 0;
