@@ -43,6 +43,7 @@ O programa oferece as seguintes funcionalidades de conversão:
 ## Contribuidores
 - **Victor Samir Ribeiro dos Anjos**
 - **Elaine Pereira Garrido**
+- **Gabriel Tavares Matos**
 - (Adicione outros contribuintes)
 
 ## Líder do Projeto
