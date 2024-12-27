@@ -23,8 +23,7 @@ O programa oferece as seguintes funcionalidades de conversão:
 ## Dependências
 - Ambiente de desenvolvimento configurado com suporte a C.
 - Biblioteca padrão `<stdio.h>` para entrada e saída de dados.
-- Biblioteca padrão `<string.h>` para utilização e manipulação de strings.
-- Biblioteca criada `unit_converter.h` para efetuar as conversões necessárias.
+- (Opcional) Outras bibliotecas específicas para funções avançadas de conversão.
 
 ## Como Executar
 1. Clone este repositório no seu computador.
@@ -39,14 +38,24 @@ O programa oferece as seguintes funcionalidades de conversão:
 - **12/12/2024** - *Victor Samir*: Criou o código principal com o menu de opções de conversão.
 - **13/12/2024** - *Elaine Garrido*: Criou o código Conversor de Unidades de comprimento.
 - **14/12/2024** - *Elaine Garrido*: Alterou o Conversor de unidades de comprimento para V2.
+- **14/12/2024** - *Vitor Costa*: Criou a função de conversão de tempo no "unit_converter.h".
+- **15/12/2024** - *Gustavo Melo*: Criou a função de conversão de área "unit_converter.h".
+- **25/12/2024** - *Carlos Valadão*: Adicionou a funcionalidade de conversão de massa em "unit_converter.h"
+- **26/12/2024** - *Victor Samir*: Adicionou as funções de conversão de volume, velocidade e dados em "unit_converter.h"
 - (Adicione novas revisões conforme necessário)
 
 ## Contribuidores
 - **Victor Samir Ribeiro dos Anjos**
 - **Elaine Pereira Garrido**
+- **Fernando Soares de Santana**
+- **Gabriel Tavares Matos**
+- **Vitor Almeida Costa**
+- **Gustavo Henrique Duarte de Melo**
+- **Carlos Henrique de Olveira Valadão**
+- (Adicione outros contribuintes)
 
 ## Líder do Projeto
-- **Carlos Valadão**
+- **Carlos Henrique de Oliveira Valadão**
 
 ---
 
