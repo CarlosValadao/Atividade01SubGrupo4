@@ -7,6 +7,7 @@
 * Dependências: [ADICIONAR TODAS AS DEPENDÊNCIAS UTILIZADAS]
 * Histórico de Revisões: {
 *   - (12/12/2024) - Victor Samir - Criou o código principal, com o menu de opções de conversão
+*   - (14/12/2024) - Vitor Costa - Adicionou a chamada das funuções para cada case
 *   - [DATA] - [NOME] - Adicionou/modificou [descrição da mudança]
 * }
 * Contribuidores: Victor Samir Ribeiro dos Anjos, [ADICIONAR NOME AQUI]
