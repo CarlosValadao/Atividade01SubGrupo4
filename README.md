@@ -44,6 +44,7 @@ O programa oferece as seguintes funcionalidades de conversão:
 - **Victor Samir Ribeiro dos Anjos**
 - **Elaine Pereira Garrido**
 - **Fernando Soares de Santana**
+- **Gabriel Tavares Matos**
 - (Adicione outros contribuintes)
 
 ## Líder do Projeto
