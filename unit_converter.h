@@ -610,4 +610,13 @@ void conv_memoria(){
     default:
         printf("Opcao invalida!\n");
     }
+
+    //Impressão dos resultados
+    printf("\nConversao de %.2f para outras unidades:\n", valor);
+    printf("Bits: %6f\n", bits);
+    printf("Bytes: %.6f\n", bits / bits_por_byte);
+    printf("Kilobytes: %.6f\n", bits / (bits_por_byte * bytes_por_kb));
+    printf("Megabytes: %.6f\n", bits / (bits_por_byte * bytes_por_kb * kb_por_mb));
+    printf("Gigabytes: %.6f\n", bits / (bits_por_byte * bytes_por_kb * kb_por_mb * mb_por_gb));
+    printf("Terabytes: %.6f\n", bits / (bits_por_byte * bytes_por_kb * kb_por_mb * mb_por_gb * gb_por_tb));
 }
