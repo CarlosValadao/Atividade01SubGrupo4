@@ -14,6 +14,7 @@
  ***********************************************/
 
 #include <stdio.h>
+#include "unit_converter.h"
 //#include <BIBLIOTECA_DE_FUNCOES.h>
 
 //Início do main
@@ -49,63 +50,63 @@ int main () {
             //1 - Unidades de comprimento(metro, centímetro, milimetro)
             case 1:{
                 //FUNÇÃO DE CONVERSÃO DE COMPRIMENTO
-
+                conv_comprimento();
                 break;
             }//fim case 1
 
             //2 - Unidades de massa (quilograma, grama, tonelada)
             case 2:{
                 //FUNÇÃO DE CONVERSÃO DE MASSA
-
+                conv_massa();
                 break;
             }//fim case 2
 
             //3 - Unidades de volume (litro, mililitro, metros cubicos)
             case 3:{
                 //FUNÇÃO DE CONVERSÃO DE VOLUME
-
+                conv_volume();
                 break;
             }//fim case 3
 
             //4 - Unidades de temperatura (Celsius, Fahrenheit, Kelvin)
             case 4:{
                 //FUNÇÃO DE CONVERSÃO DE TEMPERATURA
-
+                conv_temperatura();
                 break;
             }//fim case 4
 
             //5 - Unidades de velocidade (km/h, m/s, mph)
             case 5:{
                 //FUNÇÃO DE CONVERSÃO DE VELOCIDADE
-
+                conv_velocidade();
                 break;
             }//fim case 5
 
             //6 - Watts (W), quilowatts (kW), cavalos-vapor (cv ou hp)
             case 6:{
                 //FUNÇÃO DE CONVERSÃO DE ENERGIA
-
+                conv_energia();
                 break;
             }//fim case 6
 
             //7 - Unidades de area (metro quadrado, centimetro quadrado)
             case 7:{
                 //FUNÇÃO DE CONVERSÃO DE ÁREA
-
+                conv_area();
                 break;
             }//fim case 7
 
             //8 - Unidades de tempo (segundos, minutos, horas)
             case 8:{
                 //FUNÇÃO DE CONVERSÃO DE TEMPO
-
+                conv_tempo();
                 break;
             }//fim case 8
 
             //9 - Bits, bytes, kilobytes (KB), megabytes (MB), gigabytes (GB), terabytes (TB)
             case 9:{
                 //FUNÇÃO DE CONVERSÃO DE UNIDADES DE MEMÓRIA
-
+                conv_memoria();
                 break;
             }//fim case 9
 
