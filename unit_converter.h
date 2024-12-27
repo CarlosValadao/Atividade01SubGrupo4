@@ -2,41 +2,120 @@
 * Nome do projeto: Header com conversores de unidades
 * Autor: EmbarcaTech CEPEDI - Grupo 7 (Subgrupo 4)
 * Data de criação: 14/12/2024
-* Descrição: [ADICIONAR DESCRIÇÃO DO PROJETO]
-* Funcionalidades: [LISTAR AS FUNCIONALIDADES]
-* Dependências: [ADICIONAR TODAS AS DEPENDÊNCIAS UTILIZADAS]
+* Descrição: Arquivo que contém todas as funções que serão utilizadas no aplicativo principal de conversão de medidas
+* Funcionalidades: Conversores de comprimento, massa, volume, temperatura, velocidade, energia, área, tempo e dados
+* Dependências: 
+* - Ambiente de desenvolvimento configurado com suporte a C.
+* - Biblioteca padrão <stdio.h> para entrada e saída de dados.
+* - Biblioteca padrão <string.h> para utilização e manipulação de strings
 * Histórico de Revisões: {
 *   - (14/12/2024) - Vitor Costa - Criou o header principal, com o menu de opções de conversão
-*   - (26/12/2024) - Victor Samir - Adicionou as funções de massa, volume, temperatura, velocidade e memoria.
+*   - (26/12/2024) - Victor Samir - Adicionou as funções de volume, temperatura, velocidade e memória
 * }
-* Contribuidores: Vitor Almeida Costa, Victor Samir Ribeiro dos Anjos
-* Líder do projeto: [ADICIONAR NOME]
+* Contribuidores: Vitor Almeida Costa, Victor Samir, ...
+* Líder do projeto: Carlos Valadão
  ***********************************************/
 
+#define TONELADA   1
+#define QUILOGRAMA 2
+#define GRAMA      3
+
+
+#include <string.h>
+
 /********************************************** CONVERSOR DE UNIDADES DE COMPRIMENTO ***********************************************/
+
+
+char exibirMenuConversaoMassa()
+{
+    int unidadeInicial = 0;
+    printf("Escolha a unidade que deseja converter:\n");
+    printf("1. Toneladas (T)\n");
+    printf("2. Quilogramas (KG)\n");
+    printf("3. Gramas (g)\n");
+    printf("Digite a opcao desejada: ");
+    scanf("%c", &unidadeInicial);
+    return unidadeInicial;
+}
+
+int exibirMenu() {
+    int unidadeInicial = 0;
+    printf("Escolha a unidade que deseja converter:\n");
+    printf("1. Watt (W)\n");
+    printf("2. QuiloWatts (kW)\n");
+    printf("3. Horse Power (hp)\n");
+    printf("Digite a opcao desejada: ");
+    scanf("%d", &unidadeInicial);
+    return unidadeInicial;
+}
+
+void converter_energia() {
+
+    float W;
+    float kW;
+    float hp;
+    int unidadeInicial = 0;
+
+    unidadeInicial = exibirMenu();
+
+    switch (unidadeInicial) {
+    case 1:
+        printf("\nDigite o valor em W: ");
+        scanf("%f", &W);
+
+        kW = W/1000;
+        hp = W/745.7;
+
+        printf("\n%.3f W convertido para %.3f kW e %.3f hp", W, kW, hp);
+        break;  
+    case 2:
+        printf("\nDigite o valor em kW: ");
+        scanf("%f", &kW);
+
+        W = kW*1000;
+        hp = kW/0.7457;
+
+        printf("\n%.3f kW convertido para %.3f W e %.3f hp", kW, W, hp);
+        break;  
+    case 3:
+        printf("\nDigite o valor em hp: ");
+        scanf("%f", &hp);
+
+        W = hp*745.7;
+        kW = hp*0.7457;
+
+        printf("\n%.3f hp convertido para %.3f W e %.3f kW", hp, W, kW);
+        break;  
+    default:
+        printf("\nErro");
+        break;  
+
+    }
+}
 
 // Função para exibir o menu inicial do conversor de comprimento
 void exibirMenuComprimento() {
     printf("Escolha a unidade inicial:\n");
-    printf("1. Metro (m)\n");
-    printf("2. Centímetro (cm)\n");
-    printf("3. Milímetro (mm)\n");
+    printf("1. Para Metro digite (mt)\n");
+    printf("2. Para Centímetro digite (cm)\n");
+    printf("3. Para Milímetro digite (mm)\n");
     printf("Digite a opção desejada: ");
 }
-//Conversor de unidade de comprimento
 
+//Conversor de unidade de comprimento
 void conv_comprimento(){
 
-    int opcaoInicial, opcaoDestino;
+    char opcaoInicial[4];
+    char opcaoDestino[4];
     float valor, resultado;
 
     // Exibe o menu e lê a unidade inicial
     exibirMenuComprimento();
-    scanf("%d", &opcaoInicial);
+    scanf("%3s", opcaoInicial); // Limita a entrada para evitar estouro de buffer
     fflush(stdin);//Limpa o buffer
 
     // Valida a opção inicial
-    if (opcaoInicial < 1 || opcaoInicial > 3) {
+    if (strcmp(opcaoInicial, "mt") != 0 && strcmp(opcaoInicial, "cm") != 0 && strcmp(opcaoInicial, "mm") != 0) {
         printf("Opção inválida!\n");
         //return 1;
     }
@@ -48,36 +127,36 @@ void conv_comprimento(){
 
     // Exibe o menu novamente para a unidade de destino
     printf("Escolha a unidade de destino:\n");
-    printf("1. Metro (m)\n");
-    printf("2. Centímetro (cm)\n");
-    printf("3. Milímetro (mm)\n");
+    printf("1. Para Metro digite (mt)\n");
+    printf("2. Para Centímetro digite (cm)\n");
+    printf("3. Para Milímetro digite (mm)\n");
     printf("Digite a opção desejada: ");
-    scanf("%d", &opcaoDestino);
+    scanf("%3s", opcaoDestino);
     fflush(stdin);//Limpa o buffer
 
     // Valida a opção de destino
-    if (opcaoDestino < 1 || opcaoDestino > 3) {
+    if (strcmp(opcaoDestino, "mt") != 0 && strcmp(opcaoDestino, "cm") != 0 && strcmp(opcaoDestino, "mm") != 0) {
         printf("Opção inválida!\n");
         //return 1;
     }
 
     // Processa a conversão com base nas opções escolhidas
-    if (opcaoInicial == opcaoDestino) {	
+    if (strcmp(opcaoInicial, opcaoDestino) == 0) {
         resultado = valor; // Mesma unidade, sem conversão
-    } else if (opcaoInicial == 1) { // Metro para outras unidades
-        if (opcaoDestino == 2) {
+    } else if (strcmp(opcaoInicial, "mt") == 0) { // Metro para outras unidades
+        if (strcmp(opcaoDestino, "cm") == 0) {
             resultado = valor * 100; // Metro para centímetro
         } else {
             resultado = valor * 1000; // Metro para milímetro
         }
-    } else if (opcaoInicial == 2) { // Centímetro para outras unidades
-        if (opcaoDestino == 1) {
+    } else if (strcmp(opcaoInicial, "cm") == 0) { // Centímetro para outras unidades
+        if (strcmp(opcaoDestino, "mt") == 0) {
             resultado = valor / 100; // Centímetro para metro
         } else {
             resultado = valor * 10; // Centímetro para milímetro
         }
-    } else if (opcaoInicial == 3) { // Milímetro para outras unidades
-        if (opcaoDestino == 1) {
+    } else if (strcmp(opcaoInicial, "mm") == 0) { // Milímetro para outras unidades
+        if (strcmp(opcaoDestino, "mt") == 0) {
             resultado = valor / 1000; // Milímetro para metro
         } else {
             resultado = valor / 10; // Milímetro para centímetro
@@ -91,79 +170,49 @@ void conv_comprimento(){
 
 /********************************************** CONVERSOR DE UNIDADES DE MASSA ***********************************************/
 
+float ton2grams(float ton) { return ton*1000000; };
+
+float ton2kilograms(float ton) { return ton*1000; };
+
+float kilograms2ton(float kilograms) { return kilograms/1000; };
+
+float kilograms2grams(float kilograms) { return kilograms*1000; };
+
+float grams2ton(float grams) { return grams/1000000; };
+
+float grams2kilograms(float grams) { return grams/1000; };
+
 //Conversor de unidades de massa
-void conv_massa() {
-    int tipo;
+void conv_massa(){
+    char unidadeInicial = 0;
+    float massToConvert, convertedMass1, convertedMass2;
 
-    printf("Opcoes: \n");
-    printf("1 - Quilograma\n");
-    printf("2 - Grama\n");
-    printf("3 - Tonelada\n");
-    printf("Qual unidade voce quer converter? ");
-    scanf("%d", &tipo);//Usuário digita itemEscolhido
-    fflush(stdin);//Limpa o buffer
+    unidadeInicial = exibirMenuConversaoMassa();
+    printf("Digite o valor a ser convertido: \n");
+    scanf("%f", &massToConvert);
 
-    switch(tipo){
-        case 1:{
-            float valorPedido, valorKg, valorGrama, valorTonelada;
-            //Pedindo o valor em quilogramas
-            printf("Digite o valor em Quilogramas(kg): ");
-            scanf("%f", &valorPedido);
-            fflush(stdin);
-            valorKg = valorPedido;
-
-            //Convertendo o valor para grama e tonelada
-            valorGrama = valorKg * 1000.00;
-            valorTonelada = valorKg / 1000.00;
-
-            //Imprimindo os resultados
-            printf("%.0fkg = %.4fg\n", valorKg, valorGrama);
-            printf("%.0fkg = %.4ft\n", valorKg, valorTonelada);
-            break;
-        }
-        case 2:{
-            float valorPedido, valorKg, valorGrama, valorTonelada;
-            //Pedindo o valor em gramas
-            printf("Digite o valor em Gramas(g): ");
-            scanf("%f", &valorPedido);
-            fflush(stdin);
-            valorGrama = valorPedido;
-
-            //Convertendo o valor para quilograma e tonelada
-            valorKg = valorGrama / 1000.00;
-            valorTonelada = valorKg / 1000.00;
-
-            //Imprimindo os resultados
-            printf("%.0fg = %.4fkg\n", valorGrama, valorKg);
-            printf("%.0fg = %.4ft\n", valorGrama, valorTonelada);
-            
-            break;
-        }
-        case 3:{
-            float valorPedido, valorKg, valorGrama, valorTonelada;
-            //Pedindo o valor em toneladas
-            printf("Digite o valor em Toneladas(t): ");
-            scanf("%f", &valorPedido);
-            fflush(stdin);
-            valorTonelada = valorPedido;
-
-            //Convertendo o valor para quilograma e grama
-            valorKg = valorTonelada * 1000.00;
-            valorGrama = valorKg * 1000.00;
-
-            //Imprimindo os resultados
-            printf("%.0ft = %.4fkg\n", valorTonelada, valorKg);
-            printf("%.0ft = %.4ft\n", valorTonelada, valorGrama);
-            break;
-        }
-        default:{
-            printf("Opcao invalida!\n");
-            break;
-        }
+    switch (unidadeInicial)
+    {
+    case TONELADA:
+        convertedMass1 = ton2grams(massToConvert);
+        convertedMass2 = ton2kilograms(massToConvert);
+        printf("%.2fT equivale a %.2fg e %.2fKG\n", massToConvert, convertedMass1, convertedMass2);
+        break;
+    case QUILOGRAMA:
+        convertedMass1 = kilograms2grams(massToConvert);
+        convertedMass2 = kilograms2ton(massToConvert);
+        printf("%.2fKG equivale a %.2fg e %.2fT\n", massToConvert, convertedMass1, convertedMass2);
+        break;
+    case GRAMA:
+        convertedMass1 = grams2kilograms(massToConvert);
+        convertedMass2 = grams2ton(massToConvert);
+        printf("%.2fg equivale a %.2fKG e %.2fT\n", massToConvert, convertedMass1, convertedMass2);
+        break;
+    default:
+        printf("Escolha errada\n");
+        break;
     }
-
 }
-
 
 /********************************************** CONVERSOR DE UNIDADES DE VOLUME ***********************************************/
 
@@ -237,6 +286,7 @@ void conv_volume(){
             break;
         }
     }
+
 }
 
 /********************************************** CONVERSOR DE UNIDADES DE TEMPERATURA ***********************************************/
@@ -311,13 +361,14 @@ void conv_temperatura(){
             break;
         }
     }
+
 }
 
 /********************************************** CONVERSOR DE UNIDADES DE VELOCIDADE ***********************************************/
 
 //Conversor de unidades de velocidade
 void conv_velocidade(){
-    int tipo;
+     int tipo;
 
     printf("Opcoes: \n");
     printf("1 - Quilometros por hora\n");
@@ -619,4 +670,5 @@ void conv_memoria(){
     printf("Megabytes: %.6f\n", bits / (bits_por_byte * bytes_por_kb * kb_por_mb));
     printf("Gigabytes: %.6f\n", bits / (bits_por_byte * bytes_por_kb * kb_por_mb * mb_por_gb));
     printf("Terabytes: %.6f\n", bits / (bits_por_byte * bytes_por_kb * kb_por_mb * mb_por_gb * gb_por_tb));
+
 }

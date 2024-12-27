@@ -23,7 +23,8 @@ O programa oferece as seguintes funcionalidades de conversão:
 ## Dependências
 - Ambiente de desenvolvimento configurado com suporte a C.
 - Biblioteca padrão `<stdio.h>` para entrada e saída de dados.
-- (Opcional) Outras bibliotecas específicas para funções avançadas de conversão.
+- Biblioteca padrão `<string.h>` para utilização e manipulação de strings.
+- Biblioteca criada `unit_converter.h` para efetuar as conversões necessárias.
 
 ## Como Executar
 1. Clone este repositório no seu computador.
@@ -43,10 +44,9 @@ O programa oferece as seguintes funcionalidades de conversão:
 ## Contribuidores
 - **Victor Samir Ribeiro dos Anjos**
 - **Elaine Pereira Garrido**
-- (Adicione outros contribuintes)
 
 ## Líder do Projeto
-- (Adicione o nome do líder do projeto)
+- **Carlos Valadão**
 
 ---
 
