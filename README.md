@@ -48,7 +48,7 @@ O programa oferece as seguintes funcionalidades de conversão:
 - (Adicione outros contribuintes)
 
 ## Líder do Projeto
-- (Adicione o nome do líder do projeto)
+- **Carlos Henrique de Oliveira Valadão**
 
 ---
 
