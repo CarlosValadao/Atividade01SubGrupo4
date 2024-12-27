@@ -38,6 +38,7 @@ O programa oferece as seguintes funcionalidades de conversão:
 - **12/12/2024** - *Victor Samir*: Criou o código principal com o menu de opções de conversão.
 - **13/12/2024** - *Elaine Garrido*: Criou o código Conversor de Unidades de comprimento.
 - **14/12/2024** - *Elaine Garrido*: Alterou o Conversor de unidades de comprimento para V2.
+- **14/12/2024** - *Vitor Costa*: Criou a função de conversão de tempo no "unit_converter.h".
 - (Adicione novas revisões conforme necessário)
 
 ## Contribuidores
@@ -45,6 +46,7 @@ O programa oferece as seguintes funcionalidades de conversão:
 - **Elaine Pereira Garrido**
 - **Fernando Soares de Santana**
 - **Gabriel Tavares Matos**
+- **Vitor Almeida Costa**
 - (Adicione outros contribuintes)
 
 ## Líder do Projeto
