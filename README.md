@@ -50,6 +50,7 @@ O programa oferece as seguintes funcionalidades de conversão:
 - **Gabriel Tavares Matos**
 - **Vitor Almeida Costa**
 - **Gustavo Henrique Duarte de Melo**
+- **Carlos Henrique de Olveira Valadão**
 - (Adicione outros contribuintes)
 
 ## Líder do Projeto
