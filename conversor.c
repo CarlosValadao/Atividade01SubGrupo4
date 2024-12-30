@@ -13,7 +13,8 @@
 * - Unidades de área (metros quadrados, centímetros quadrados).
 * - Unidades de tempo (segundos, minutos, horas).
 * - Unidades de memória (bits, bytes, kilobytes, megabytes, gigabytes, terabytes).
-* Dependências: Bibliotecas <stdio.h>, <string.h> e "unit_converter.h"
+* Dependências: Bibliotecas <stdio.h>, <string.h>, "unit_converter.h", <windows.h>
+*                           e <unistd.h>
 * Histórico de Revisões: {
 *   - (12/12/2024) - Victor Samir - Criou o código principal, com o menu de opções de conversão
 *   - (26/12/2024) - Victor Samir - Incluiu o arquivo .h com todas as funções e as adicionou a cada opção do switch
@@ -131,17 +132,7 @@ int main () {
                 continue;
             }//fim default
         }//fim do switch
-
-        //Pergunta se o usuário quer executar mais conversões. Qual quer valor digitado, diferente de 'n' e 'N', abre o menu novamente
-        if (continuar == 1) {
-            printf("Deseja executar mais conversoes(S/n)? ");
-            scanf("%c", &opcao);//recebe valor de opcao
-
-            if (opcao == 'N' || opcao == 'n') {
-                continuar = 0;
-            }//fim do if(opcao)
-
-        }//fim do if (continuar)
+        sleep(5);
 
     } while (continuar != 0);// fim do-while
 
