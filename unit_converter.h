@@ -26,16 +26,13 @@
 /********************************************** CONVERSOR DE UNIDADES DE COMPRIMENTO ***********************************************/
 
 
-char exibirMenuConversaoMassa()
+void exibirMenuConversaoMassa()
 {
-    int unidadeInicial = 0;
     printf("Escolha a unidade que deseja converter:\n");
     printf("1. Toneladas (T)\n");
     printf("2. Quilogramas (KG)\n");
     printf("3. Gramas (g)\n");
     printf("Digite a opcao desejada: ");
-    scanf("%c", &unidadeInicial);
-    return unidadeInicial;
 }
 
 int exibirMenu() {
@@ -184,13 +181,15 @@ float grams2kilograms(float grams) { return grams/1000; };
 
 //Conversor de unidades de massa
 void conv_massa(){
-    char unidadeInicial = 0;
+    char unidadeInicial;
     float massToConvert, convertedMass1, convertedMass2;
 
-    unidadeInicial = exibirMenuConversaoMassa();
-    printf("Digite o valor a ser convertido: \n");
+    exibirMenuConversaoMassa();
+    scanf("%d", &unidadeInicial);
+    fflush(stdin);
+    printf("Digite o valor a ser convertido: ");
     scanf("%f", &massToConvert);
-
+    fflush(stdin);
     switch (unidadeInicial)
     {
     case TONELADA:
