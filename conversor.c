@@ -132,7 +132,7 @@ int main () {
                 continue;
             }//fim default
         }//fim do switch
-
+        sleep(5);
 
     } while (continuar != 0);// fim do-while
 
