@@ -20,6 +20,9 @@
 #define QUILOGRAMA 2
 #define GRAMA      3
 
+#define METRO      1
+#define CENTIMETRO 2
+#define MILIMETRO  3
 
 #include <string.h>
 
@@ -102,19 +105,18 @@ void exibirMenuComprimento() {
 //Conversor de unidade de comprimento
 void conv_comprimento(){
 
-    char opcaoInicial[4];
-    char opcaoDestino[4];
+    int opcaoInicial, opcaoDestino;
     float valor, resultado;
 
     // Exibe o menu e lê a unidade inicial
     exibirMenuComprimento();
-    scanf("%3s", opcaoInicial); // Limita a entrada para evitar estouro de buffer
+    scanf("%d", &opcaoInicial); // Limita a entrada para evitar estouro de buffer
     fflush(stdin);//Limpa o buffer
 
     // Valida a opção inicial
-    if (strcmp(opcaoInicial, "mt") != 0 && strcmp(opcaoInicial, "cm") != 0 && strcmp(opcaoInicial, "mm") != 0) {
+    if (opcaoInicial < 0 && opcaoInicial > 4) {
         printf("Opção inválida!\n");
-        //return 1;
+        return;
     }
 
     // Solicita o valor a ser convertido
@@ -128,32 +130,32 @@ void conv_comprimento(){
     printf("2. Para Centímetro digite (cm)\n");
     printf("3. Para Milímetro digite (mm)\n");
     printf("Digite a opção desejada: ");
-    scanf("%3s", opcaoDestino);
+    scanf("%d", &opcaoDestino);
     fflush(stdin);//Limpa o buffer
 
     // Valida a opção de destino
-    if (strcmp(opcaoDestino, "mt") != 0 && strcmp(opcaoDestino, "cm") != 0 && strcmp(opcaoDestino, "mm") != 0) {
+    if (opcaoInicial < 0 && opcaoDestino > 4) {
         printf("Opção inválida!\n");
-        //return 1;
+        return;
     }
 
     // Processa a conversão com base nas opções escolhidas
-    if (strcmp(opcaoInicial, opcaoDestino) == 0) {
+    if (opcaoInicial == opcaoDestino) {
         resultado = valor; // Mesma unidade, sem conversão
-    } else if (strcmp(opcaoInicial, "mt") == 0) { // Metro para outras unidades
-        if (strcmp(opcaoDestino, "cm") == 0) {
+    } else if (opcaoInicial == METRO) { // Metro para outras unidades
+        if (opcaoDestino == CENTIMETRO) {
             resultado = valor * 100; // Metro para centímetro
         } else {
             resultado = valor * 1000; // Metro para milímetro
         }
-    } else if (strcmp(opcaoInicial, "cm") == 0) { // Centímetro para outras unidades
-        if (strcmp(opcaoDestino, "mt") == 0) {
+    } else if (opcaoInicial == CENTIMETRO) { // Centímetro para outras unidades
+        if (opcaoDestino == METRO) {
             resultado = valor / 100; // Centímetro para metro
         } else {
             resultado = valor * 10; // Centímetro para milímetro
         }
-    } else if (strcmp(opcaoInicial, "mm") == 0) { // Milímetro para outras unidades
-        if (strcmp(opcaoDestino, "mt") == 0) {
+    } else if (opcaoInicial == MILIMETRO) { // Milímetro para outras unidades
+        if (opcaoDestino == METRO) {
             resultado = valor / 1000; // Milímetro para metro
         } else {
             resultado = valor / 10; // Milímetro para centímetro
