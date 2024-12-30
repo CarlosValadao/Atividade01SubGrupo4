@@ -2,20 +2,28 @@
 * Nome do projeto: Conversor de Unidades em C
 * Autor: EmbarcaTech CEPEDI - Grupo 7 (Subgrupo 4)
 * Data de criação: 12/12/2024
-* Descrição: [ADICIONAR DESCRIÇÃO DO PROJETO]
-* Funcionalidades: [LISTAR AS FUNCIONALIDADES]
-* Dependências: [ADICIONAR TODAS AS DEPENDÊNCIAS UTILIZADAS]
+* Descrição: Este projeto consiste em um programa em C que permite realizar a conversão de diversas unidades de medida.   Ele apresenta um menu interativo no terminal, onde o usuário pode escolher o tipo de unidade a ser convertido, como comprimento, massa, volume, temperatura, entre outros.
+* Funcionalidades: O programa oferece as seguintes funcionalidades de conversão:
+* - Unidades de comprimento (metros, centímetros, milímetros).
+* - Unidades de massa (quilogramas, gramas, toneladas).
+* - Unidades de volume (litros, mililitros, metros cúbicos).
+* - Unidades de temperatura (Celsius, Fahrenheit, Kelvin).
+* - Unidades de velocidade (km/h, m/s, mph).
+* - Conversão de energia (watts, quilowatts, cavalos-vapor).
+* - Unidades de área (metros quadrados, centímetros quadrados).
+* - Unidades de tempo (segundos, minutos, horas).
+* - Unidades de memória (bits, bytes, kilobytes, megabytes, gigabytes, terabytes).
+* Dependências: Bibliotecas <stdio.h>, <string.h> e "unit_converter.h"
 * Histórico de Revisões: {
 *   - (12/12/2024) - Victor Samir - Criou o código principal, com o menu de opções de conversão
-*   - [DATA] - [NOME] - Adicionou/modificou [descrição da mudança]
+*   - (26/12/2024) - Victor Samir - Incluiu o arquivo .h com todas as funções e as adicionou a cada opção do switch
 * }
-* Contribuidores: Victor Samir Ribeiro dos Anjos, [ADICIONAR NOME AQUI]
-* Líder do projeto: [ADICIONAR NOME]
+* Contribuidores: Victor Samir Ribeiro dos Anjos, Vitor Almeida Costa, Elaine Garrido
+* Líder do projeto: Carlos Valadão
  ***********************************************/
 
 #include <stdio.h>
 #include "unit_converter.h"
-//#include <BIBLIOTECA_DE_FUNCOES.h>
 
 //Início do main
 int main () {

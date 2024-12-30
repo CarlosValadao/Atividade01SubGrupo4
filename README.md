@@ -41,6 +41,7 @@ O programa oferece as seguintes funcionalidades de conversão:
 - **14/12/2024** - *Vitor Costa*: Criou a função de conversão de tempo no "unit_converter.h".
 - **15/12/2024** - *Gustavo Melo*: Criou a função de conversão de área "unit_converter.h".
 - **25/12/2024** - *Carlos Valadão*: Adicionou a funcionalidade de conversão de massa em "unit_converter.h"
+- **26/12/2024** - *Victor Samir*: Adicionou as funções de conversão de volume, velocidade e dados em "unit_converter.h"
 - (Adicione novas revisões conforme necessário)
 
 ## Contribuidores
